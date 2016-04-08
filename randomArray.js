@@ -4,6 +4,10 @@
 
 var randomArray = function(elements, max, min) {
 	
+	if (elements <= 0 || max < min) {
+		return 'Invalid parameters are used (elements must be higher than 0 and max cannot be lower than min)'
+	}
+
 	if (elements === undefined) {
 		elements = 10;
 	}
@@ -24,7 +28,7 @@ var randomArray = function(elements, max, min) {
 	//It is then scaled by the max and minimum
 
 	for (i=0; i < elements; i++) {
-		array[i] = Math.floor(Math.random() * (max - min +1)) + min);
+		array[i] = Math.floor((Math.random() * (max - min + 1)) + min);
 	}	
 
 return array;
